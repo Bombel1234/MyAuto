@@ -1,0 +1,65 @@
+
+<MyLabel@MDLabel>
+    font_size:'18sp'
+
+<CardInfo>
+    size_hint_y:None
+    height:data_text.height + box.height + grid.height + dp(80)
+    padding:'15dp'
+    pos_hint:{'center_y':.5}
+    focus_behavior: True
+    md_bg_color:"#3B4A53" if app.theme_cls.theme_style == 'Dark' else '#9457EB'
+    unfocus_color: "#536872" if app.theme_cls.theme_style == 'Dark' else '#9457EB'
+    focus_color: "#3B4A53" if app.theme_cls.theme_style == 'Dark' else '#20B2AA'
+    ripple_behavior: True
+
+    RelativeLayout:
+        MDLabel:
+            id:data_text
+            adaptive_size:True
+            pos_hint:{'center_x':.5, 'top':.95}
+            text:root.data_day
+            font_size:'24sp'
+
+        BoxLayout:
+            id:box
+            size_hint_y:None
+            height: label.height
+            pos_hint:{'center_x':.5, 'center_y':.5}
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, .9
+                Line:
+                    width: 1.
+                    rectangle: (self.x, self.y, self.width, self.height)
+
+            MDLabel:
+                id:label
+                padding:20
+                text:root.text_word
+                font_size:'18sp'
+                adaptive_height:True
+        MDGridLayout:
+            id:grid
+            cols:2
+            rows:2
+            adaptive_height:True
+            pos_hint:{'center_x':.5, 'bottom':1}
+            spacing:'10dp'
+            MyLabel:
+                text:root.text_km_str
+            MyLabel:
+                id:km_text
+                text:root.text_km
+            MyLabel:
+                text:root.text_cena_str
+            MyLabel:
+                id:cena_text
+                text:root.text_cena
+        MDIconButton:
+            id:btn_edit
+            icon:'pencil'
+            icon_size:'32dp'
+            pos_hint:{'top':1,'right':1}
+            theme_icon_color:'Custom'
+            icon_color:app.theme_cls.primary_color

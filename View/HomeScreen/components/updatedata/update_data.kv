@@ -1,0 +1,39 @@
+<UpdateData>
+    spacing: "12dp"
+    size_hint_y: None
+    height: "220dp"
+    orientation:'vertical'
+    BoxLayout:
+        MDLabel:
+            id:dd
+            text:root.day
+        MDLabel:
+            id:mm
+            text:root.month
+        MDLabel:
+            id:yy
+            text:root.year
+    MDGridLayout:
+        id:grid
+        cols:2
+        size_hint_y:.8
+        MDRelativeLayout:
+            MDBoxLayout:
+                id:box1
+                size_hint:None,None
+                size:'80dp', grid.height
+                pos_hint:{'center_x':.5}
+                MDScrollView:
+                    bar_width:0
+                    MDList:
+                        id:container1
+        MDRelativeLayout:
+            MDBoxLayout:
+                id:box2
+                size_hint:None, None
+                size:'150dp', grid.height
+                pos_hint:{'center_x':.5}
+                MDScrollView:
+                    bar_width:0
+                    MDList:
+                        id:container2

@@ -1,0 +1,17 @@
+<PathImage>
+    orientation:'vertical'
+    size_hint_y: None
+    height: "120dp"
+    spacing:'20dp'
+    MDTextFieldRect:
+        id:input
+        hint_text:'Wklej url fotki'
+        text:root.text
+    MDRectangleFlatIconButton:
+        id:btn
+        icon: "plus"
+        theme_text_color: "Custom"
+        text_color: "white"
+        line_color: "red"
+        text:'Zapisz albo zamknij'
+        pos_hint:{'center_x':.5}

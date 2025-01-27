@@ -1,0 +1,53 @@
+
+
+<LogoScreenView>
+    MDLabel:
+        text:'Książka Serwisowa'
+        halign:'center'
+        adaptive_size:True
+        font_size:'38sp'
+        font_name:'assets/fonts/Lato-Black.ttf'
+        theme_text_color: "Custom"
+        text_color: app.theme_cls.primary_color
+        pos_hint:{'center_x':.5, 'center_y':.9}
+
+    MDBoxLayout:
+        adaptive_height:True
+        height:'280dp'
+        pos_hint:{'center_x':.5, 'center_y':.66}
+        padding:'20dp', 0
+        FitImage:
+            source:'assets/images/auto1.png'
+            fit_mode:"scale-down"
+    MDBoxLayout:
+        size_hint_y:None
+        height:'250dp'
+        padding:'20dp',0
+        pos_hint:{'center_x':.5, 'center_y':.3}
+        MDScrollView:
+            bar_width:0
+            MDList:
+                spacing:'20dp'
+                id:box_list_auto
+    TooltipMDIconButton:
+        id:btn2
+        icon:'plus'
+        tooltip_text:'Dodaj auto'
+        tooltip_font_style:'H4'
+        pos_hint:{'center_x':.15, 'center_y':.1}
+        icon_size:'74sp'
+        theme_icon_color: "Custom"
+        icon_color: app.theme_cls.primary_color
+        on_release:
+            root.add_auto()
+    MDIconButton:
+        icon:'cog'
+        icon_size:'74sp'
+        pos_hint: {'center_x': 0.85, 'center_y': 0.1}
+        theme_icon_color: "Custom"
+        icon_color: app.theme_cls.primary_color
+        on_release:root.controller.move_to_screen_settings()
+
+
+<TooltipMDIconButton@MDIconButton+MDTooltip>
+

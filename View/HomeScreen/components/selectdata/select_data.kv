@@ -1,0 +1,63 @@
+<SelectData>
+    size_hint_y: None
+    height: "320dp"
+    BoxLayout:
+        orientation:'vertical'
+        MDGridLayout:
+            size_hint_y:.1
+            cols:3
+            MDLabel:
+                id:dd
+                halign:'center'
+                text:root.day
+#                font_size:'18sp'
+            MDLabel:
+                id:mm
+                text:root.month
+                halign:'center'
+#                font_size:'18sp'
+            MDLabel:
+                id:yy
+                text:root.year
+                halign:'center'
+#                font_size:'18sp'
+        MDGridLayout:
+            cols:2
+            adaptive_height:True
+            height:'56dp'
+            MDLabel:
+                text:'Dzien'
+                halign:'center'
+            MDLabel:
+                text:'Miesiąc'
+                halign:'center'
+
+
+        MDGridLayout:
+            id:grid
+            cols:2
+            size_hint_y:.8
+            MDRelativeLayout:
+                MDBoxLayout:
+                    id:box1
+                    size_hint:None,None
+                    size:'80dp', grid.height
+                    pos_hint:{'center_x':.5}
+                    MDScrollView:
+                        bar_width:0
+                        MDList:
+                            id:container1
+            MDRelativeLayout:
+                MDBoxLayout:
+                    id:box2
+                    size_hint:None, None
+                    size:'150dp', grid.height
+                    pos_hint:{'center_x':.5}
+                    MDScrollView:
+                        bar_width:0
+                        MDList:
+                            id:container2
+
+
+
+
